@@ -13287,12 +13287,6 @@ div[widgetid^=lconn_wikis_widget_CommentsMentions] .lotusChunk {
   white-space: nowrap;
   width: calc(100% - 4px) !important;
 }
-@supports (-moz-appearance: none) {
-  #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent,
-#lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitExpandoText:not([dojoattachpoint=expandoNodeText]) {
-    width: calc(100% - 18px) !important;
-  }
-}
 #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent .dijitTreeLabel,
 #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitExpandoText:not([dojoattachpoint=expandoNodeText]) .dijitTreeLabel {
   font-size: 0.875rem;
@@ -13334,6 +13328,18 @@ div[widgetid^=lconn_wikis_widget_CommentsMentions] .lotusChunk {
 }
 #lotusColLeft .dijitTreeContainer .dijitTreeContainer .dijitTreeContainer {
   padding-left: 6px !important;
+}
+
+@supports (-ms-ime-align: auto) {
+  html #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent {
+    width: calc(100% - 4px) !important;
+  }
+}
+html.dj_chrome #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent {
+  width: calc(100% - 4px) !important;
+}
+html.dj_safari #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent {
+  width: calc(100% - 24px) !important;
 }
 
 div[id^="filter_wiki.filter.allpages"] .lotusSearch input#pagenavsearchbox {

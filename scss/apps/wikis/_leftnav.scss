@@ -28,9 +28,6 @@
       text-overflow: ellipsis;
       vertical-align: middle;
       white-space: nowrap;
-      @supports (-moz-appearance:none) {
-        width: calc(100% - 18px) !important; // Issue #2419; FF fix for severely truncated items
-      }
       width: calc(100% - 4px) !important; // Issue #2419; fix for severely truncated items
 
       .dijitTreeLabel {
@@ -82,6 +79,26 @@
     padding-left: 6px !important;
   }
 }
+
+// Browser-specific overrides for wiki nav title widths
+html {
+  @supports (-ms-ime-align: auto) {
+    #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent {
+      width: calc(100% - 4px) !important; // Issue #2419; fix for severely truncated items
+    }
+  }
+  &.dj_chrome {
+    #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent {
+      width: calc(100% - 4px) !important; // Issue #2419; fix for severely truncated items
+    }
+  }
+  &.dj_safari {
+    #lotusColLeft .navDiv#sideNav .dijitTreeNode .dijitTreeRow .dijitTreeContent {
+      width: calc(100% - 24px) !important; // Issue #2419; fix for severely truncated items
+    }
+  }
+}
+
 
 //1758 Search icon for Wiki > Index > Pages > Go to Page...
 div[id^="filter_wiki.filter.allpages"] .lotusSearch {
